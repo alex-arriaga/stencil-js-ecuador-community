@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <title>Stencil Component Starter</title>
+
+  <script type="module" src="/build/web-components-demo.esm.js"></script>
+  <script nomodule src="/build/web-components-demo.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<section class="web-section web-section--external">
+  <h2>Countries Finder</h2>
+  <input type="text" class="js-trigger web-input" value="co"/>
+  <web-countries-finder keyword="co" class="js-target-countries"></web-countries-finder>
+</section>
+
+<!--<app-business-card name="Esmeralda Rodríguez" job-position="UX/UI Design" phone="512-773-0889"-->
+<!--                   email="esmeralda@webtraining.world" website="https://webtraining.zone"-->
+<!--                   linked-in-profile="https://linkedin.com"></app-business-card>-->
+<script>
+  (function () {
+    // TODO: Double check your browser compatibility!!!
+    const $input = document.querySelector('.js-trigger');
+    const $countriesFinder = document.querySelector('.js-target-countries');
+
+    $input.addEventListener('input', function () {
+      $countriesFinder.keyword = $input.value;
+    });
+
+  })();
+</script>
+</body>
+</html>
